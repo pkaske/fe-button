@@ -1,0 +1,40 @@
+{
+  "name": "fe-button",
+  "authors": [
+    "Peter Kaske <p.kaske@gmail.com>"
+  ],
+  "description": "Simple button that uses iron-icon and can add a label.",
+  "license": "MIT",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "web-component",
+    "list",
+    "filter"
+  ],
+  "main": "fe-button.html",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  },
+  "homepage": "https://github.com/pkaske/fe-button",
+  "_release": "aadd9e2429",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "aadd9e2429653ae4cdc9e5680fc76f9b1fb2d00a"
+  },
+  "_source": "git://github.com/pkaske/fe-button.git",
+  "_target": "master",
+  "_originalSource": "pkaske/fe-button",
+  "_direct": true
+}
