@@ -1,0 +1,108 @@
+<!--
+@license
+Copyright (c) 2015 Peter Kaske <p.kaske@gmail.com>. All rights reserved.
+This code may only be used under the MIT license found at http://opensource.org/licenses/MIT.
+Or see the LICENSE file that comes with this code.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+<!--
+Simple button that extends iron-icon by a label.
+
+@group GUI Elements
+@element fe-button
+@demo http://pkaske.github.io/fe-button
+@homepage https://pkaske.github.io/fe-button
+-->
+
+<dom-module id="fe-button">
+  <style>
+    :host {
+      display: inline-block;
+      cursor: pointer;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+
+      @apply(--fe-button);
+    }
+
+    :host([disabled]) {
+      color: #717171;
+      cursor: auto;
+      pointer-events: none;
+
+      @apply(--fe-button-disabled);
+    }
+
+    iron-icon {
+      --iron-icon-width: var(--fe-button-icon-width, 24px);
+      --iron-icon-height: var(--fe-button-icon-height, 24px);
+    }
+
+    .label {
+      padding-left: 5px;
+    }
+
+    .wrap {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+    }
+
+    .wrap[label-left] {
+      @apply(--layout-horizontal-reverse);
+    }
+
+    .wrap[label-left] .label {
+      padding-left: 0;
+      padding-right: 5px;
+    }
+
+  </style>
+  <template>
+    <div class="wrap" label-left$="[[labelLeft]]">
+      <iron-icon icon$="[[icon]]" src$="[[src]]"></iron-icon>
+      <span class="label"><content></content></span>
+    </div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'fe-button',
+
+    properties: {
+
+      /**
+       * Icon attribute for `iron-icon`
+       */
+      icon: {
+        type: String
+      },
+
+      /**
+       * Theme attribute for `iron-icon`
+       */
+      theme: {
+        type: String
+      },
+
+      /**
+       * Src attribute for `iron-icon`
+       */
+      src: {
+        type: String
+      },
+
+      /**
+       * If true, the label is placed left from the icon, instead of right.
+       */
+      labelLeft: {
+        type: Boolean,
+        value: false
+      }
+    }
+  });
+</script>
